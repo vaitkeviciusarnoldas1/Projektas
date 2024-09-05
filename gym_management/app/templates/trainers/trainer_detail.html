@@ -1,0 +1,19 @@
+<!-- trainer_detail.html -->
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<h1>Trainer Details</h1>
+<p>Name: {{ trainer.first_name }} {{ trainer.last_name }}</p>
+<p>Age: {{ trainer.age }}</p>
+<p>Email: {{ trainer.email }}</p>
+<p>Phone: {{ trainer.phone }}</p>
+<p>License Number: {{ trainer.license_number }}</p>
+<p>License Expiry: {{ trainer.license_expiry }}</p>
+<p>Experience: {{ trainer.experience }}</p>
+<p>Sport Specialty: {{ trainer.sport_specialty }}</p>
+<a href="{{ url_for('edit_trainer', trainer_id=trainer.trainer_id) }}" class="btn">Edit</a>
+<form action="{{ url_for('delete_trainer', trainer_id=trainer.trainer_id) }}" method="post" style="display:inline;">
+    <input type="submit" value="Delete" class="btn">
+</form>
+<a href="{{ url_for('trainers') }}" class="btn">Back to Trainers List</a>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<h1>Add Trainer</h1>
+<form method="post" action="{{ url_for('add_trainer') }}">
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" required>
+    <br>
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" required>
+    <br>
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone">
+    <br>
+    <label for="license_number">License Number:</label>
+    <input type="text" id="license_number" name="license_number">
+    <br>
+    <label for="license_expiry">License Expiry:</label>
+    <input type="date" id="license_expiry" name="license_expiry">
+    <br>
+    <label for="experience">Experience:</label>
+    <input type="text" id="experience" name="experience">
+    <br>
+    <label for="sport_specialty">Sport Specialty:</label>
+    <input type="text" id="sport_specialty" name="sport_specialty">
+    <br>
+    <input type="submit" value="Add Trainer">
+</form>
+{% endblock %}

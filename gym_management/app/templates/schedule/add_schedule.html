@@ -1,0 +1,26 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Add Schedule{% endblock %}
+
+{% block content %}
+<h2>Add New Schedule</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div>
+        <label for="trainer_id">Trainer ID:</label>
+        {{ form.trainer_id(class="form-control") }}
+    </div>
+    <div>
+        <label for="date">Date:</label>
+        {{ form.date(class="form-control") }}
+    </div>
+    <div>
+        <label for="time">Time:</label>
+        {{ form.time(class="form-control") }}
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Add Schedule</button>
+    </div>
+</form>
+<a href="{{ url_for('show_schedule') }}" class="btn btn-secondary">Back to Schedule</a>
+{% endblock %}

@@ -4,13 +4,58 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     margin: 0;
-    height: 110vh;
+    min-height: 100vh; /* Changed to min-height */
     color: #000; /* Pagrindinė teksto spalva */
     font-family: Arial, sans-serif;
+    position: relative;
 }
 
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Tamsintas permatomas sluoksnis */
+    z-index: -1; /* Už pagrindinio turinio */
+}
+/* Įsitikinkite, kad kūno ir konteinerių stiliai yra teisingi */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Užtikrina, kad body bent jau padengtų visą viewportą */
+    margin: 0;
+}
+
+.container {
+    flex: 1; /* Leidžia konteineriui užpildyti likusią vietą */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centruoja turinį vertikaliai */
+    align-items: center; /* Centruoja turinį horizontaliai */
+    padding: 20px; /* Pridėkite atstumą aplink turinį, jei reikia */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Remove extra space between borders */
+}
+
+th, td {
+    padding: 8px; /* Adjust padding as needed */
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Add a border for better readability */
+}
+
+tr:nth-child(even) {
+    background-color: #e0f7fa; /* Alternate row color */
+}
+
+tr:hover {
+    background-color: #ddd; /* Highlight row on hover */
+}
 h1, p {
-    text-align: center;
     color: #FF0000; /* Ryškiai raudona spalva */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Šešėlis, kuris padeda išryškinti tekstą */
 }
@@ -24,24 +69,52 @@ a:hover {
     text-decoration: underline;
 }
 
-.container {
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* Šiek tiek permatomas baltos spalvos fonas */
-    border-radius: 8px; /* Apvalinti kampai */
+/* Bendras mygtukų stilius */
+.btn {
+    background-color: #0000FF; /* Mėlyna spalva */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    font-size: 16px;
+    text-align: center;
+    display: inline-block;
 }
 
-.bold-black-text {
+.btn:hover {
+    background-color: #0000CC; /* Tamsesnė mėlyna spalva hover efektui */
+}
+
+/* Specialios mygtukų stiliaus klasės */
+.btn-edit {
+    background-color: #FFFF00; /* Geltona spalva */
     color: black;
-    font-weight: bold;
 }
 
-/* Add these styles if not already present */
-.trainer-photo {
-    width: 100px; /* Adjust the size as needed */
-    height: auto;
-    margin-right: 20px;
+.btn-add {
+    background-color: #00FF00; /* Žalia spalva */
 }
 
-.trainer-detail {
-    max-width: 500px;
+.btn-delete {
+    background-color: #FF0000; /* Raudona spalva */
+}
+
+/* Mygtukų konteineris */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.btn-container a,
+.btn-container button {
+    margin: 0 5px;
+}
+
+/* Back mygtukų stilius viršuje */
+.back-buttons {
+    text-align: center;
+    margin-bottom: 20px;
 }

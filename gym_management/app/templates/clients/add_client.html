@@ -1,0 +1,47 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Add Client{% endblock %}
+
+{% block content %}
+<h2>Add New Client</h2>
+<form method="POST">
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" required>
+    <br>
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" required>
+    <br>
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age">
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone">
+    <br>
+    <label for="member_number">Member Number:</label>
+    <input type="text" id="member_number" name="member_number">
+    <br>
+    <label for="join_date">Join Date:</label>
+    <input type="date" id="join_date" name="join_date">
+    <br>
+    <label for="address">Address:</label>
+    <textarea id="address" name="address"></textarea>
+    <br>
+    <label for="membership_id">Membership ID:</label>
+    <input type="text" id="membership_id" name="membership_id">
+    <br>
+    <label for="group_training_id">Group Training ID:</label>
+    <input type="text" id="group_training_id" name="group_training_id">
+    <br>
+    <label for="start_date">Start Date:</label>
+    <input type="date" id="start_date" name="start_date">
+    <br>
+    <label for="end_date">End Date:</label>
+    <input type="date" id="end_date" name="end_date">
+    <br>
+    <button type="submit">Add Client</button>
+</form>
+<a href="{{ url_for('clients') }}" class="btn">Back to Clients List</a>
+{% endblock %}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<nav class="navbar">
+    <ul class="navbar-menu">
+        <li><a href="{{ url_for('trainers') }}">Treneriai</a></li>
+        <li><a href="{{ url_for('schedule') }}">Tvarkaraštis</a></li>
+        <li><a href="{{ url_for('clients') }}">Klientai</a></li>
+        <li><a href="{{ url_for('readme') }}">Readme</a></li>
+        <li><a href="{{ url_for('memberships') }}">Narystė</a></li>
+    </ul>
+</nav>
+
+<h1>Group Trainer Details</h1>
+
+{% if group_trainers %}
+<table>
+    <thead>
+    <tr>
+        <th>Trainer Name</th>
+        <th>Membership Type</th>
+        <th>Schedule</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for trainer in group_trainers %}
+    <tr>
+        <td>{{ trainer.name }}</td>
+        <td>{{ trainer.membership_type }}</td>
+        <td>{{ trainer.schedule }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No group trainers found.</p>
+{% endif %}
+
+<footer>
+    <p>© 2024 Gym Management System</p>
+</footer>
+</body>
+</html>

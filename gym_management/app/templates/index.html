@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-<h1>Welcome to ARNOLDAS GYM</h1>
-<nav>
-    <ul>
-        <li><a href="{{ url_for('trainers') }}">See Trainers</a></li>
-        <li><a href="{{ url_for('clients') }}">See Clients</a></li>
-    </ul>
-</nav>
-</body>
-</html>
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Welcome to the Gym Management System</h1>
+    <p>Šiame puslapyje galite valdyti treniruotes, klientus, tvarkaraštį ir daugiau.</p>
+    <div class="btn-container">
+        <a href="{{ url_for('menu') }}" class="btn btn-primary">More</a>
+    </div>
+</div>
+{% endblock %}

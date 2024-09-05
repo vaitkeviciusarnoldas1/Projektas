@@ -1,0 +1,33 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Schedule{% endblock %}
+
+{% block content %}
+<h2>Schedule</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Trainer ID</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for schedule in schedules %}
+    <tr>
+        <td>{{ schedule.trainer_id }}</td>
+        <td>{{ schedule.date.strftime('%Y-%m-%d') }}</td>
+        <td>{{ schedule.time.strftime('%H:%M') }}</td>
+        <td>
+            <a href="{{ url_for('edit_schedule', schedule_id=schedule.schedule_id) }}">Edit</a>
+            <form action="{{ url_for('delete_schedule', schedule_id=schedule.schedule_id) }}" method="POST" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<a href="{{ url_for('add_schedule') }}" class="btn">Add New Schedule</a>
+{% endblock %}

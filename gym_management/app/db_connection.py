@@ -2,11 +2,11 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-# Sukurkite duomenų bazės variklį (pakeiskite URL pagal savo duomenų bazės konfigūraciją)
+# Create a database engine (replace the URL with your database configuration)
 engine = create_engine('sqlite:///gym_management.db')
 
-# Sukurkite bazinę klasę, ant kurios bus kuriamos visos lentelės
+# Create a base class for all tables
 Base = declarative_base()
 
-# Sukurkite sesijos kūrimo funkciją
+# Create a session factory
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

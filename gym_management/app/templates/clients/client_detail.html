@@ -1,0 +1,26 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Client Details{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Client Details</h2>
+    <p><strong>First Name:</strong> {{ client.first_name }}</p>
+    <p><strong>Last Name:</strong> {{ client.last_name }}</p>
+    <p><strong>Age:</strong> {{ client.age }}</p>
+    <p><strong>Email:</strong> {{ client.email }}</p>
+    <p><strong>Phone:</strong> {{ client.phone }}</p>
+    <p><strong>Member Number:</strong> {{ client.member_number }}</p>
+    <p><strong>Join Date:</strong> {{ client.join_date }}</p>
+    <p><strong>Address:</strong> {{ client.address }}</p>
+    <p><strong>Membership ID:</strong> {{ client.membership_id }}</p>
+    <p><strong>Group Training ID:</strong> {{ client.group_training_id }}</p>
+    <p><strong>Start Date:</strong> {{ client.start_date }}</p>
+    <p><strong>End Date:</strong> {{ client.end_date }}</p>
+    <a href="{{ url_for('edit_client', client_id=client.client_id) }}" class="btn">Edit Client</a>
+    <form action="{{ url_for('delete_client', client_id=client.client_id) }}" method="post" style="display:inline;">
+        <input type="submit" value="Delete Client" class="btn btn-delete">
+    </form>
+    <a href="{{ url_for('clients') }}" class="btn">Back to Clients List</a>
+</div>
+{% endblock %}
