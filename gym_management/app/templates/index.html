@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<h1>Welcome to ARNOLDAS GYM</h1>
+<nav>
+    <ul>
+        <li><a href="{{ url_for('trainers') }}">See Trainers</a></li>
+        <li><a href="{{ url_for('clients') }}">See Clients</a></li>
+    </ul>
+</nav>
+</body>
+</html>

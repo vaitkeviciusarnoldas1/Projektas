@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Trainers</title>
+</head>
+<body>
+<h1>Group Trainers</h1>
+
+<!-- Back to Previous Page Button -->
+<a href="{{ request.referrer or url_for('index') }}">Back</a>
+
+<!-- Back to Home Page Button -->
+<a href="{{ url_for('index') }}">Back to Home</a>
+
+<ul>
+    {% for trainer in group_trainer %}
+    <li>
+        {{ trainer.group_name }} ({{ trainer.duration }}, ${{ trainer.price }})
+        <form action="{{ url_for('delete_group_trainer', group_training_id=trainer.group_training_id) }}" method="POST" style="display:inline;">
+            <input type="submit" value="Delete">
+        </form>
+    </li>
+    {% else %}
+    <li>No group trainers found.</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

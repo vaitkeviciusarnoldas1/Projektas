@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memberships</title>
+</head>
+<body>
+<h1>Memberships</h1>
+
+<!-- Add New Membership Button -->
+<a href="{{ url_for('add_membership') }}">Add New Membership</a>
+
+<!-- Back to Previous Page Button -->
+<a href="{{ request.referrer or url_for('index') }}">Back</a>
+
+<!-- Back to Home Page Button -->
+<a href="{{ url_for('index') }}">Back to Home</a>
+
+<ul>
+    {% for membership in memberships %}
+    <li>
+        Membership Name: {{ membership.membership_name }} | Type: {{ membership.membership_type }} | Price: {{ membership.price }}
+        <a href="{{ url_for('edit_membership', membership_id=membership.membership_id) }}">Edit</a>
+        <form action="{{ url_for('delete_membership', membership_id=membership.membership_id) }}" method="POST" style="display:inline;">
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

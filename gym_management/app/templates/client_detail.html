@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<h1>Client Details</h1>
+<p><strong>Client ID:</strong> {{ client.client_id }}</p>
+<p><strong>First Name:</strong> {{ client.first_name }}</p>
+<p><strong>Last Name:</strong> {{ client.last_name }}</p>
+<p><strong>Age:</strong> {{ client.age }}</p>
+<p><strong>Email:</strong> {{ client.email }}</p>
+<p><strong>Phone:</strong> {{ client.phone }}</p>
+<p><strong>Member Number:</strong> {{ client.member_number }}</p>
+<p><strong>Join Date:</strong> {{ client.join_date }}</p>
+<p><strong>Address:</strong> {{ client.address }}</p>
+<p><strong>Membership ID:</strong> {{ client.membership_id }}</p>
+<p><strong>Group Training ID:</strong> {{ client.group_training_id }}</p>
+<p><strong>Start Date:</strong> {{ client.start_date }}</p>
+<p><strong>End Date:</strong> {{ client.end_date }}</p>
+<a href="{{ url_for('clients') }}">Back to Clients List</a>
+<a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>

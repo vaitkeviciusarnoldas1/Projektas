@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Arnoldas Gym{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<div class="background-image">
+    <header>
+        <h1>Welcome to Arnoldas Gym</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('trainers') }}">Trainers</a></li>
+                <li><a href="{{ url_for('clients') }}">Clients</a></li>
+                <li><a href="{{ url_for('schedule') }}">Schedule</a></li>
+                <li><a href="{{ url_for('memberships') }}">Memberships</a></li>
+                <li><a href="{{ url_for('group_trainer') }}">Group Trainers</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- "Back" mygtukas -->
+    <button onclick="history.back()" class="btn-back">Back</button>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</div>
+</body>
+</html>

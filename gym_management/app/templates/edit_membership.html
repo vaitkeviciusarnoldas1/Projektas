@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Membership</title>
+</head>
+<body>
+<h1>Edit Membership</h1>
+<form method="POST">
+    <label for="membership_type">Membership Type:</label>
+    <input type="text" id="membership_type" name="membership_type" value="{{ membership.membership_type }}" required>
+    <br>
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" value="{{ membership.price }}" step="0.01" required>
+    <br>
+    <label for="membership_name">Membership Name:</label>
+    <input type="text" id="membership_name" name="membership_name" value="{{ membership.membership_name }}" required>
+    <br>
+    <button type="submit">Update Membership</button>
+</form>
+
+<!-- Back to Previous Page Button -->
+<a href="{{ request.referrer or url_for('memberships') }}">Back</a>
+
+<!-- Back to Home Page Button -->
+<a href="{{ url_for('index') }}">Back to Home</a>
+
+</body>
+</html>

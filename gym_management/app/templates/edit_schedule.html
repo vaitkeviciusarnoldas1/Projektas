@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Schedule</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<h1>Edit Schedule</h1>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.trainer_id.label }}<br>
+        {{ form.trainer_id() }}<br>
+        {% for error in form.trainer_id.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.date.label }}<br>
+        {{ form.date() }}<br>
+        {% for error in form.date.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.time.label }}<br>
+        {{ form.time() }}<br>
+        {% for error in form.time.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        <input type="submit" value="Submit">
+    </p>
+</form>
+
+<!-- Back to Previous Page Button -->
+<a href="{{ request.referrer or url_for('show_schedule') }}">Back</a>
+
+<!-- Back to Home Page Button -->
+<a href="{{ url_for('index') }}">Back to Home</a>
+
+</body>
+</html>

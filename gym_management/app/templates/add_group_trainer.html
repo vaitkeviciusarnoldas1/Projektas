@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Group Trainer</title>
+</head>
+<body>
+<h1>Add New Group Trainer</h1>
+<form method="POST">
+    <label for="trainer_id">Trainer ID:</label>
+    <input type="number" id="trainer_id" name="trainer_id" required>
+    <br>
+    <label for="schedule_id">Schedule ID:</label>
+    <input type="number" id="schedule_id" name="schedule_id" required>
+    <br>
+    <label for="group_name">Group Name:</label>
+    <input type="text" id="group_name" name="group_name" required>
+    <br>
+    <label for="duration">Duration:</label>
+    <input type="text" id="duration" name="duration" required>
+    <br>
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" step="0.01" required>
+    <br>
+    <button type="submit">Add Group Trainer</button>
+</form>
+
+<!-- Back to Previous Page Button -->
+<a href="{{ request.referrer or url_for('group_trainer') }}">Back</a>
+
+<!-- Back to Group Trainers List Button -->
+<a href="{{ url_for('group_trainer') }}">Back to Group Trainers List</a>
+
+<!-- Back to Home Page Button -->
+<a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

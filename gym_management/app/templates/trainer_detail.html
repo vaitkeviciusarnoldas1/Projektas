@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ trainer.first_name }} {{ trainer.last_name }}</title>
+</head>
+<body>
+<h1>{{ trainer.first_name }} {{ trainer.last_name }}</h1>
+
+<p>Age: {{ trainer.age }}</p>
+<p>Email: {{ trainer.email }}</p>
+<p>Phone: {{ trainer.phone }}</p>
+<p>License Number: {{ trainer.license_number }}</p>
+<p>License Expiry: {{ trainer.license_expiry }}</p>
+<p>Experience: {{ trainer.experience }}</p>
+<p>Sport Specialty: {{ trainer.sport_specialty }}</p>
+
+<!-- Edit Trainer Button -->
+<a href="{{ url_for('edit_trainer', trainer_id=trainer.trainer_id) }}">Edit</a>
+
+<!-- Delete Trainer Form -->
+<form action="{{ url_for('delete_trainer', trainer_id=trainer.trainer_id) }}" method="POST" style="display:inline;">
+    <button type="submit">Delete</button>
+</form>
+
+<!-- Back to Previous Page Button -->
+<a href="{{ request.referrer or url_for('trainers') }}">Back</a>
+
+<!-- Back to Trainers List Button -->
+<a href="{{ url_for('trainers') }}">Back to Trainers List</a>
+
+<!-- Back to Home Page Button -->
+<a href="{{ url_for('index') }}">Back to Home</a>
+
+</body>
+</html>
