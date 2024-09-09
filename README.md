@@ -64,8 +64,7 @@ Memberships: /memberships
 Group Training: /group_trainer
 
 **Diagram**
-![image](https://github.com/user-attachments/assets/5cf9afd5-9e5c-4f8f-9d3e-49a090eb9781)
-
+![image](https://github.com/user-attachments/assets/ca87557c-dbb6-4ec8-be83-889125ded04b)
 
 **Contributing**
 
