@@ -64,8 +64,7 @@ Memberships: /memberships
 Group Training: /group_trainer
 
 **Diagram**
-![Diagram](images/Screenshot%202024-09-09%20at%2014.16.18.png)
-
+![Diagram](https://github.com/yourusername/gym-management-system/blob/main/images/diagrama.png)
 
 **Contributing**
 
