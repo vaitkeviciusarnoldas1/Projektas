@@ -64,7 +64,8 @@ Memberships: /memberships
 Group Training: /group_trainer
 
 **Diagram**
-![Diagram](https://github.com/vaitkeviciusarnoldas1/gym-management-system/blob/main/images/diagrama.png)
+![image](https://github.com/user-attachments/assets/5cf9afd5-9e5c-4f8f-9d3e-49a090eb9781)
+
 
 **Contributing**
 
